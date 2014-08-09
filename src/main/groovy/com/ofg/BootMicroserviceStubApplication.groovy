@@ -56,7 +56,7 @@ class BootMicroserviceStubApplication {
 
     private static void printUsage() {
         println """USAGE:
-        \tjava -jar twitter-places-analyzer-stub-VERSION-shadow.jar <zooKeeperBasePath> <stubName> <stubPortNumber> <zookeeperPortNumber>
+        \tjava -jar gui-stub-VERSION-shadow.jar <zooKeeperBasePath> <stubName> <stubPortNumber> <zookeeperPortNumber>
         \t\tWHERE
         \t\tzooKeeperBasePath: base path in ZooKeeper where stub will be registered."
         \t\tstubName: stub name used to register in ZooKeeper."

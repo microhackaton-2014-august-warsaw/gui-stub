@@ -34,8 +34,8 @@ ext {
     spockVersion = '0.7-groovy-2.0'
 }
 
-group = 'com.ofg'
-description = 'Example of a microservice stub - basing on Twitter Places Analyzer Microservice Stub'
+group = 'pl.microhackathon'
+description = 'GUI stub'
 version = currentVersion
 
 dependencies {
@@ -54,33 +54,14 @@ task wrapper(type: Wrapper) {
     gradleVersion = '2.0'
 }
 
-publishing {
-    publications {
-        mavenJava(MavenPublication) {
-            from components.java
-
-            artifact sourcesJar {
-                classifier "sources"
-            }
-
-            artifact fatJar {
-                classifier "shadow"
-            }
-
-            artifact fatJarWithoutGroovy {
-                classifier "groovyless-shadow"
-            }
+uploadArchives {
+    repositories.mavenDeployer {
+        repository(url: "http://nexus.microhackathon.pl/content/repositories/releases/") {
+            authentication(userName: 'deployment', password: 'deployment123')
         }
-    }
-
-    repositories {
-        maven {
-            credentials {
-                username ''
-                password ''
-            }
-            url "http://repo.4finance.net/nexus/content/repositories/Pipeline"
-        }
+        pom.version = currentVersion
+        pom.artifactId = project.name
+        pom.groupId = "pl.microhackaton"
     }
 }
 

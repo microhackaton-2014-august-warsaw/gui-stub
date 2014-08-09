@@ -3,11 +3,11 @@ package com.ofg.infrastructure
 import groovy.transform.TypeChecked
 
 @TypeChecked
-class TwitterPlacesAnalyzerMediaType {
+class GuiMediaType {
 
     public static final String CONTENT_TYPE = "Content-Type"
 
-    protected static final String APPLICATION_TYPE = 'application/vnd.com.ofg.twitter-places-analyzer'
+    protected static final String APPLICATION_TYPE = 'application/vnd.gui'
 
     private static final String JSON = '+json'
 
